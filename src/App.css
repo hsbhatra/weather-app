@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --gradient-primary: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+  --gradient-secondary: linear-gradient(135deg, #ff6b6b 0%, #ffa3a3 100%);
+  --text-dark: #333;
+  --text-light: #fff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: 'Poppins', sans-serif;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: var(--gradient-primary);
+  color: var(--text-dark);
+  padding: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  animation: fadeIn 0.5s ease-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 25px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+}
+
+button {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 25px;
+  background: var(--gradient-secondary);
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: var(--shadow);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.error {
+  color: #ff3333;
+  text-align: center;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tablet and Desktop Styles */
+@media (min-width: 768px) {
+  .app {
+    padding: 3rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .search-container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  input {
+    margin-bottom: 0;
+  }
+
+  button {
+    width: auto;
+    padding: 0.8rem 2rem;
   }
 }
