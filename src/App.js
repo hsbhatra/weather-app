@@ -34,7 +34,8 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Weather Forecast</h1>
+      <h1>Tempix</h1>
+      <h3>(Feel the Forecast)</h3>
       <div className="search-container">
         <input
           type="text"
